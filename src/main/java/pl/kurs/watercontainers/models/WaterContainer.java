@@ -8,10 +8,17 @@ public class WaterContainer {
     private double maxCapacity;
     private double waterLevel;
 
-    public WaterContainer(String name, double maxCapacity, double waterLevel) {
+    private WaterContainer(String name, double maxCapacity, double waterLevel) {
         this.name = name;
         this.maxCapacity = maxCapacity;
         this.waterLevel = waterLevel;
+    }
+
+    public static WaterContainer create(String name, double maxCapacity, double waterLevel){
+        if (maxCapacity < waterLevel || maxCapacity < 0 || waterLevel < 0) {
+            throw new RuntimeException("Błędne argumenty dla kontenera!");
+        }
+        return new WaterContainer(name, maxCapacity, waterLevel);
     }
 
     public String getName() {
