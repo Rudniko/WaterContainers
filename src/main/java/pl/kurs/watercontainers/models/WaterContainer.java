@@ -5,7 +5,7 @@ import java.util.Objects;
 public class WaterContainer {
 
     private String name;
-    private double maxCapacity;
+    private final double maxCapacity;
     private double waterLevel;
 
     private WaterContainer(String name, double maxCapacity, double waterLevel) {
@@ -37,9 +37,6 @@ public class WaterContainer {
         this.name = name;
     }
 
-    public void setMaxCapacity(double maxCapacity) {
-        this.maxCapacity = maxCapacity;
-    }
 
     public void setWaterLevel(double waterLevel) {
         this.waterLevel = waterLevel;
